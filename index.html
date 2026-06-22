@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(152, 251, 177);
+            margin-top: 20px;
+            border: 1px solid rgb(11, 224, 82);
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1"> Add</button>
+    <button id="btn2">Remove</button>
+    <button class="btn3">Change box Color</button><br><br>
+     Enter value = <input type = "text" id = "t1" placeholder="Enter Text">
+    <div id="i1"></div>
+    <script>
+     
+    var button1 = document.getElementById("btn1");
+    var i1 = document.getElementById("i1");
+    let count = 0;
+    button1.onclick = function ()
+    {
+        count++;
+        let div = document.createElement("div");
+        div.className = "box";
+        div.innerHTML = count +"." +t1.value;
+        i1.appendChild(div);
+    }
+    var button2 = document.getElementById("btn2");
+    var i1 = document.getElementById("i1");
+    button2.onclick = function ()
+    {
+        i1.lastElementChild.remove();
+        count--;
+    }
+        var button3 = document.querySelector(".btn3");
+        button3.onclick = function ()
+    {
+        let box = document.getElementsByClassName("box");
+       for(let i = 0; i < box.length; i++)
+    {
+        box[i].style.backgroundColor = "blue";
+    } 
+    }
+    </script>
+    
+</body>
+</html>
